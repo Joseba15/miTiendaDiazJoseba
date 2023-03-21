@@ -51,9 +51,10 @@ CREATE TABLE user_medicine(
 	username VARCHAR(20),
 	id_medic INT(6),
 	amount INT(2),
+	price REAL,
 	buyDate DATE,
 
-	CONSTRAINT PK_USUARIO_MEDIC PRIMARY KEY (id_medic,username,amount,buyDate),
+	CONSTRAINT PK_USUARIO_MEDIC PRIMARY KEY (id_medic,username,buyDate),
 	CONSTRAINT FK_USUARIO_MEDIC FOREIGN KEY (id_medic) REFERENCES medicine(id) ON DELETE CASCADE,
 	CONSTRAINT FK2_USUARIO_MEDIC FOREIGN KEY (username) REFERENCES user(username) ON DELETE CASCADE
 );
