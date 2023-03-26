@@ -21,7 +21,7 @@
 		</tr>
 	<% 
 		for(Medicine me: CRUDMedicine.getMedicines() ){
-			
+
 				%>
 				<tr>
 					<td><%=me.getName()%></td>
