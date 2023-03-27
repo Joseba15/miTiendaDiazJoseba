@@ -17,7 +17,7 @@ public class CRUDCategory {
 
 	public static List<Category> getCategories() {
 	
-		Query<Category> query = session.createQuery("SELECT p FROM categoria p");
+		Query<Category> query = session.createQuery("SELECT p FROM category p");
 		ArrayList<Category> listCategorias = (ArrayList<Category>) query.getResultList();
 		
 		return listCategorias;

@@ -7,16 +7,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title></title>
+<title>List Category</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body>
-<div class="padre">
+<div class="table">
 	<table border="1">	
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+		
 	<% 
 		for(Category me: CRUDCategory.getCategories() ){
 
@@ -32,6 +36,7 @@
 	
 	
 	%>
+	</tbody>
 	</table>
 </div>
 </body>
