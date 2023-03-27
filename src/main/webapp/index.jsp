@@ -7,21 +7,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Index</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body>
-<div class="padre">
-	<table border="1">	
+	<table class="table">	
+		<thead>
 		<tr>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Stock</th>
-			<th>Price</th>
-			<th>Category Description</th>
+			<th scope="col">Name</th>
+			<th scope="col">Description</th>
+			<th scope="col">Stock</th>
+			<th scope="col">Price</th>
+			<th scope="col">Category Description</th>
 		</tr>
+		</thead>
+		<tbody>
+		
 	<% 
 		for(Medicine me: CRUDMedicine.getMedicines() ){
-			
+
 				%>
 				<tr>
 					<td><%=me.getName()%></td>
@@ -36,6 +40,8 @@
 	
 	
 	%>
+	  </tbody>
+	
 	</table>
 </div>
 </body>
