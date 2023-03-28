@@ -38,7 +38,7 @@
             </div>
 
             <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-lg btn-block" type="submit">Login</button>
+              <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
             </div>
 
             <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>

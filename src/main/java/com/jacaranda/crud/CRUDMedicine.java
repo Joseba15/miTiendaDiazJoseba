@@ -15,10 +15,10 @@ public class CRUDMedicine {
 	
 	public CRUDMedicine() {}
 	
-	private static Session session = ConnectionBD.getSession();
+	private Session session = ConnectionBD.getSession();
 
 	
-	public static Medicine getMedicine(int idMedicamento) {
+	public  Medicine getMedicine(int idMedicamento) {
 //		Session session =  ConnectionBD.getSession();
 		
 		Medicine medicamento = (Medicine) session.get(Medicine.class,idMedicamento);
@@ -26,7 +26,7 @@ public class CRUDMedicine {
 	}
 	
 	
-	public  static List<Medicine> getMedicines() {
+	public   List<Medicine> getMedicines() {
 //		ConnectionBD co = new ConnectionBD();
 //		Session session= co.getSession();
 
@@ -37,5 +37,31 @@ public class CRUDMedicine {
 		
 		}
 		
+	
+	public  void delMedicine(int idMedicamento) {
+		Medicine medicamento = (Medicine) session.get(Medicine.class,idMedicamento);
+		
+		session.getTransaction().begin();
+		session.delete(medicamento);
+		session.getTransaction().commit();
+	}
+	
+	
+	public  void updateMedicine(Medicine me) {
+        Session session = ConnectionBD.getSession();
+        
+        try {
+        	session.getTransaction().begin();
+        	session. update(me);
+        	session.getTransaction().commit();
+			
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+        
+        
+    }
 
 }

@@ -18,8 +18,8 @@
    	if(user.getUser(nombreusuario) != null && user.getUser(nombreusuario).getUsername().equals(nombreusuario)  && 
    			user.getUser(nombreusuario).getPassword().equals(contrasena)){
            
-			session.setAttribute("login", "True");
-        	sesion.setAttribute("usuario", nombreusuario);
+			sesion.setAttribute("login", "True");
+        	sesion.setAttribute("username", nombreusuario);
         	sesion.setAttribute("password",contrasena);
 
    		response.sendRedirect("listMedicine.jsp");
