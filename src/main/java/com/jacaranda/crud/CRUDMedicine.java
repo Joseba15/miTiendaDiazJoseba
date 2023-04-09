@@ -52,7 +52,7 @@ public class CRUDMedicine {
         
         try {
         	session.getTransaction().begin();
-        	session. update(me);
+        	session.update(me);
         	session.getTransaction().commit();
 			
 		} catch (Exception e) {

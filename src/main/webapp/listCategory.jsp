@@ -22,7 +22,8 @@
 		<tbody>
 		
 	<% 
-		for(Category me: CRUDCategory.getCategories() ){
+		CRUDCategory cca = new CRUDCategory();
+		for(Category me: cca.getCategories() ){
 
 				%>
 				<tr>

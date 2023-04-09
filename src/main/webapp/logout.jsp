@@ -21,7 +21,7 @@
 			<section class="form">
 			<form action="index.jsp" method="post">
 				<h4>Cerrado Sesion con exito</h4>
-				<button type="button" class="btn btn-dark" >Volver al Login</button>
+				<a href="index.jsp"><button type="button" class="btn btn-dark" >Volver al Login</button></a>
 				
 			</form>
 			</section>
