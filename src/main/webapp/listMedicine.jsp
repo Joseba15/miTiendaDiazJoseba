@@ -36,6 +36,7 @@
 		<%}%>								
 		</a>
 	</div>	
+	
 	<table class="table">	
 		<thead>
 		<tr>
@@ -46,7 +47,12 @@
 			<th scope="col">Category description</th>
 			<th scope="col"></th>
 			<th scope="col"></th>
-			
+			<th scope="col">
+				<a href="addMedicine.jsp">
+					<button  name="singlebutton" class="btn btn-success">Add Medicine</button>				
+				</a>
+			</th>
+				
 		</tr>
 		</thead>
 		<tbody>

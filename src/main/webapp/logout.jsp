@@ -2,10 +2,9 @@
     pageEncoding="UTF-8"%>
 <%
 	HttpSession sesion = request.getSession();
-	
-	sesion.setAttribute("login", "False");
-	sesion.removeAttribute("username");
-	sesion.removeAttribute("password");
+	sesion.invalidate();	
+
+
 %>
 <!DOCTYPE html>
 <html>

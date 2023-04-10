@@ -1,5 +1,9 @@
 <%@page import="com.jacaranda.crud.CRUDMedicine"%>
+<%@page import="com.jacaranda.crud.CRUDCategory"%>
 <%@page import="com.jacaranda.model.Medicine"%>
+<%@page import="com.jacaranda.model.Category"%>
+<%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,9 +16,13 @@
 <body>
 <%
 	int id = Integer.parseInt(request.getParameter("id"));
+	CRUDCategory cc = new CRUDCategory();
 	CRUDMedicine me = new CRUDMedicine();
 	Medicine m=  me.getMedicine(id);
+
 %>
+			  
+
 	<div class="container">
 		<div class="starter-template" align="center">
 			<h4>Update Medicine</h4>
@@ -42,10 +50,25 @@
 			  
 			   <div class="form-group">
 			    <label>Category</label>
-			    <input type="number" class="form-control" name="category" id="exampleInputCategory" value="<%=m.getCategoria().getId()%>">
+			    <br>
+			    <select name="category">
+					<% List<Category> listCategoria = cc.getCategories(); 
+					   for(Category c: listCategoria){ %>
+					   <% if(c.getId()==m.getCategoria().getId() ){ %>
+						<option value="<%=c.getId()%>" selected> <%=c.getName() %></option>
+					   	<%}else {%>
+					   	<option value="<%=c.getId()%>" > <%=c.getName() %></option>
+					   	
+					   	<%} %>
+					<%}%>
+					
+				</select>
 			  </div>
 			  <br>
 			  <button type="submit" class="btn btn-primary">Update</button>
+			  <a href="listMedicine.jsp">
+			  	<button type="button" class="btn btn-primary">Go Back</button>
+			  </a>
 			</form>
 		</div>
 	</div>
