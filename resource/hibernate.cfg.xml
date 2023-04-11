@@ -13,5 +13,6 @@
   <mapping class="com.jacaranda.model.User"/>
   <mapping class="com.jacaranda.model.Medicine"/>
   <mapping class="com.jacaranda.model.Category"/>
+  <mapping class="com.jacaranda.model.UserMedicine"/>
  </session-factory>
 </hibernate-configuration>

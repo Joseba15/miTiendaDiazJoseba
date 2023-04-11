@@ -28,6 +28,13 @@
 			<h4>Update Medicine</h4>
 			<form style="width: 38rem;" action="updateExecMedicine.jsp" method="post">
 			
+			
+			<!-- input hidden para pasarle la id que necisitaremos para poder actualizar -->
+		    <input type="hidden" class="form-control" name="id" id="exampleInputId" value="<%=m.getId()%>" >
+			
+			
+			
+			
 			  <div class="form-group">
 			    <label >Name Medicine</label>
 			    <input type="text" class="form-control" name="name" id="exampleInputEmail1" value="<%=m.getName()%>">

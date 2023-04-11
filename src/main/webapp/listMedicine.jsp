@@ -8,7 +8,7 @@
 	String isSession = (String) session.getAttribute("login");
 	String user = (String) session.getAttribute("username");
 	String password = (String) session.getAttribute("password");
-
+	String isAdmin = (String) session.getAttribute("admin");
 %>
 <!DOCTYPE html>
 <html>
@@ -18,6 +18,13 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body>
+	<div>
+		<a href="listCategory.jsp">
+			<button id="singlebutton" name="singlebutton"
+				class="btn btn-dark" style="float: left; padding-left: 10px">Category List
+			</button>
+		</a>
+	</div>
 	<div>
 		<% if(isSession=="True"){%>
 		<a href="logout.jsp">
@@ -48,9 +55,12 @@
 			<th scope="col"></th>
 			<th scope="col"></th>
 			<th scope="col">
+										
+				<% if(isAdmin=="True"){%>
 				<a href="addMedicine.jsp">
 					<button  name="singlebutton" class="btn btn-success">Add Medicine</button>				
 				</a>
+				<%} %>
 			</th>
 				
 		</tr>
@@ -71,6 +81,7 @@
 					<td> <%=me.getCategoria().getDescription() %></td>
 					<!-- boton de actualizar -->
 					<td>
+						<% if(isAdmin=="True"){%>
 						<a href="updateMedicine.jsp?id=<%=me.getId()%>">
 							<button type="button" class="btn btn-warning">
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -79,9 +90,11 @@
 								</svg>
 							</button>
 						</a>
+						<%} %>
 					</td>
 					<!-- boton de borrado -->
 					<td>
+						<% if(isAdmin=="True"){%>
 						<a href="deleteMedicine.jsp?id=<%=me.getId()%>" >
 							<button type="button" class="btn btn-danger">
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
@@ -89,6 +102,7 @@
 								</svg>
 							</button>
 						</a>
+						<%} %>
 					</td>
 				</tr>
 				<%

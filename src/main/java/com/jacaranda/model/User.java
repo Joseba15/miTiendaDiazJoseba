@@ -21,8 +21,7 @@ public class User {
 	
 	public User() {	}
 
-	public User(String username, String password, String name, String surname, LocalDate birthdate, String gender,
-			boolean admin) {
+	public User(String username, String password, String name, String surname, LocalDate birthdate, String gender) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -30,7 +29,7 @@ public class User {
 		this.surname = surname;
 		this.birthdate = birthdate;
 		this.gender = gender;
-		this.admin = admin;
+		this.admin = false;
 	}
 
 	public String getUsername() {

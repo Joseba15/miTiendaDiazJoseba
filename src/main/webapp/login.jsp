@@ -17,12 +17,22 @@
    if(nombreusuario !=null && contrasena !=null){
    	if(user.getUser(nombreusuario) != null && user.getUser(nombreusuario).getUsername().equals(nombreusuario)  && 
    			user.getUser(nombreusuario).getPassword().equals(contrasena)){
-           
-			sesion.setAttribute("login", "True");
-        	sesion.setAttribute("username", nombreusuario);
-        	sesion.setAttribute("password",contrasena);
+           	if(user.getUser(nombreusuario).isAdmin()==true){
+				sesion.setAttribute("login", "True");
+	        	sesion.setAttribute("username", nombreusuario);
+	        	sesion.setAttribute("password",contrasena);
+				sesion.setAttribute("admin", "True");	
+	        	
+		   		response.sendRedirect("listMedicine.jsp");
+           		
+           	}else{
+    			sesion.setAttribute("login", "True");
+            	sesion.setAttribute("username", nombreusuario);
+            	sesion.setAttribute("password",contrasena);
+				sesion.setAttribute("admin", "False");	
 
-   		response.sendRedirect("listMedicine.jsp");
+       		response.sendRedirect("listMedicine.jsp");
+           	}
    	}else{
    	response.sendRedirect("LoginError");
    		

@@ -23,10 +23,10 @@ public class CRUDMedicine {
 		return medicamento;
 	}
 	
-	public  Medicine getMedicineByName(String name) {
-		
-		return null;
-	}
+//	public  Medicine getMedicineByName(String name) {
+//		
+//		return null;
+//	}
 	
 	
 	public   List<Medicine> getMedicines() {
