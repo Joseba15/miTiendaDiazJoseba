@@ -24,11 +24,10 @@ public class Category {
 	
 	public Category() {}
 
-	public Category( String name, String description, List<Medicine> listaMedicamentos) {
+	public Category( String name, String description) {
 		super();
 		this.name = name;
 		this.description = description;
-		this.listaMedicamentos = listaMedicamentos;
 	}
 
 	public int getId() {
