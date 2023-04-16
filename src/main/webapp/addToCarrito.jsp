@@ -26,9 +26,9 @@
 	
 	
 	if( med.getStock()>0 && med.getStock() >= cantidad){
-		carrito.addArticulo( med, cantidad, LocalDateTime.now(),precio); 
+		carrito.addArticle(med, cantidad,  LocalDateTime.now(), precio);
 		ServletContext context = this.getServletContext(); 
-		RequestDispatcher dispatcher = context.getRequestDispatcher("listMedicine.jsp");
+		response.sendRedirect("listMedicine.jsp");
 	}else{%>
 
 

@@ -18,7 +18,7 @@ private ArrayList<MedicineCarrito> listaCarrito= new ArrayList<>();
 	
 	
 	
-	public void addArticle(Medicine idMedicamento, int cantidad, LocalDateTime fechaCompra, Double precio) {
+	public void addArticle(Medicine idMedicamento, Integer cantidad, LocalDateTime fechaCompra, Double precio) {
 		listaCarrito.add(new MedicineCarrito(idMedicamento, cantidad, precio, fechaCompra));
 
 	}
