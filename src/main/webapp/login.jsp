@@ -1,5 +1,7 @@
 <%@page import="com.jacaranda.crud.CRUDUser"%>
 <%@page import="com.jacaranda.model.User"%>
+<%@page import="com.jacaranda.model.Carrito"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,6 +13,8 @@
 <body>
 <% String contrasena = request.getParameter("password");
    String nombreusuario=request.getParameter("username");
+   Carrito carrito = new Carrito();
+
    CRUDUser user = new CRUDUser();
    HttpSession sesion = request.getSession();
    
@@ -22,6 +26,8 @@
 	        	sesion.setAttribute("username", nombreusuario);
 	        	sesion.setAttribute("password",contrasena);
 				sesion.setAttribute("admin", "True");	
+	         	session.setAttribute("carrito", carrito);
+
 	        	
 		   		response.sendRedirect("listMedicine.jsp");
            		
@@ -30,6 +36,8 @@
             	sesion.setAttribute("username", nombreusuario);
             	sesion.setAttribute("password",contrasena);
 				sesion.setAttribute("admin", "False");	
+	         	session.setAttribute("carrito", carrito);
+
 
        		response.sendRedirect("listMedicine.jsp");
            	}

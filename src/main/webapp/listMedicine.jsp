@@ -104,6 +104,14 @@
 						</a>
 						<%} %>
 					</td>
+					<td>
+						<form action='addToCarrito.jsp' method='post' >
+		    					<input type='text' hidden name='price' value='<%=me.getPrice()%>'>
+		                        <label>Cantidad</label> 
+		                        <input type='number' min='1' max='<%=me.getStock()%>' value='1' name='amount'>
+							<button type='submit' name='code' value='<%=me.getId()%>'>Add</button>
+						</form>
+					</td>
 				</tr>
 				<%
 			}
