@@ -6,25 +6,25 @@ import java.util.Objects;
 
 public class MedicineCarrito {
 
-	private Medicine idMedicamento;
+	private Medicine medicamento;
 	private int cantidad;
 	private Double precio; 
 	private LocalDateTime fechaCompra ;
 	
 	public MedicineCarrito(Medicine idMedicamento, int cantidad, Double precio, LocalDateTime fechaCompra) {
 		super();
-		this.idMedicamento = idMedicamento;
+		this.medicamento = idMedicamento;
 		this.cantidad = cantidad;
 		this.precio = precio;
 		this.fechaCompra = fechaCompra;
 	}
 
-	public Medicine getIdMedicamento() {
-		return idMedicamento;
+	public Medicine getMedicamento() {
+		return medicamento;
 	}
 
-	public void setIdMedicamento(Medicine idMedicamento) {
-		this.idMedicamento = idMedicamento;
+	public void setMedicamento(Medicine idMedicamento) {
+		this.medicamento = idMedicamento;
 	}
 
 	public int getCantidad() {
@@ -53,7 +53,7 @@ public class MedicineCarrito {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(fechaCompra, idMedicamento);
+		return Objects.hash(fechaCompra, medicamento);
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class MedicineCarrito {
 		if (getClass() != obj.getClass())
 			return false;
 		MedicineCarrito other = (MedicineCarrito) obj;
-		return Objects.equals(fechaCompra, other.fechaCompra) && Objects.equals(idMedicamento, other.idMedicamento);
+		return Objects.equals(fechaCompra, other.fechaCompra) && Objects.equals(medicamento, other.medicamento);
 	}
 	
 	

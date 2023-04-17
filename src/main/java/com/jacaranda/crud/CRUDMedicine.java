@@ -101,5 +101,27 @@ public class CRUDMedicine {
         return res;
 		
     }
+	
+	/**
+	 * Metodo que nos permite actualizar el stock del articulo al añadirlo al carrito y al realizar la
+	 * compra
+	 * @param id, corresponde al id del medicamento
+	 * @param stock , la cantidad que vamos a restar al stock inicial de cada articulo
+	 */
+	public  void updateArticleStock(int id, Integer stock) {
+        Session session = ConnectionBD.getSession();
+        Medicine m = (Medicine)session.get(Medicine.class, id);
+        
+        System.out.println(m.getStock() -stock);
+        m.setStock(m.getStock() -stock);
+        System.out.println(m.getStock()-stock);
+        try {
+            session.getTransaction().begin();
+            session.save(m);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+        }
+    }
 
 }
